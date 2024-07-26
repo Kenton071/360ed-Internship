@@ -1,21 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
   let selectedComponent = null;
-
   const components = document.querySelectorAll('.component');
   const workspace = document.getElementById('workspace');
+  const connectionCanvas = document.getElementById('connection-canvas');
+  const ctx = connectionCanvas.getContext('2d');
   const introScreen = document.getElementById('intro-screen');
   const circuitWorkspace = document.getElementById('circuit-workspace');
   const startButton = document.getElementById('start-button');
   const introVideo = document.getElementById('intro-video');
+  const propertiesForm = document.getElementById('properties-form');
+  let selectedWorkspaceComponent = null;
+  let componentsInWorkspace = [];
+
+  function resizeCanvas() {
+    connectionCanvas.width = workspace.offsetWidth;
+    connectionCanvas.height = workspace.offsetHeight;
+  }
+
+  function drawConnections() { //Mock wires
+    ctx.clearRect(0, 0, connectionCanvas.width, connectionCanvas.height);
+    if (componentsInWorkspace.length > 1) {
+      ctx.beginPath();
+      for (let i = 0; i < componentsInWorkspace.length - 1; i++) {
+        const startComponent = componentsInWorkspace[i];
+        const endComponent = componentsInWorkspace[i + 1];
+        const startX = startComponent.offsetLeft + startComponent.offsetWidth / 2;
+        const startY = startComponent.offsetTop + startComponent.offsetHeight / 2;
+        const endX = endComponent.offsetLeft + endComponent.offsetWidth / 2;
+        const endY = endComponent.offsetTop + endComponent.offsetHeight / 2;
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(endX, endY);
+      }
+      ctx.stroke();
+    }
+  }
 
   startButton.addEventListener('click', function() {
     introScreen.classList.add('hidden');
     circuitWorkspace.classList.remove('hidden');
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
   });
 
   introVideo.addEventListener('ended', function() {
     introScreen.classList.add('hidden');
     circuitWorkspace.classList.remove('hidden');
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
   });
 
   components.forEach(component => {
@@ -37,13 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
       newComponent.style.position = 'absolute';
       newComponent.style.left = `${event.offsetX}px`;
       newComponent.style.top = `${event.offsetY}px`;
+      newComponent.setAttribute('data-value', '');
       workspace.appendChild(newComponent);
+      componentsInWorkspace.push(newComponent);
+      drawConnections();
       selectedComponent = null;
     }
   });
-
-  const propertiesForm = document.getElementById('properties-form');
-  let selectedWorkspaceComponent = null;
 
   workspace.addEventListener('click', function(event) {
     if (event.target.classList.contains('workspace-component')) {
@@ -55,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   propertiesForm.addEventListener('input', function(event) {
     if (selectedWorkspaceComponent) {
-      selectedWorkspaceComponent.setAttribute('data-value', event.target.value);
+      const newValue = event.target.value;
+      selectedWorkspaceComponent.setAttribute('data-value', newValue);
+      selectedWorkspaceComponent.textContent = `${selectedWorkspaceComponent.textContent.split(' ')[0]} ${newValue}`;
     }
   });
 
