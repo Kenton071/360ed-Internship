@@ -24,9 +24,9 @@
       <canvas id="connection-canvas"></canvas>
       <div id="toolbar">
         <h3>Components</h3>
-        <div class="component">Resistor</div>
-        <div class="component">Capacitor</div>
-        <div class="component">Transistor</div>
+        <div class="component" draggable="true">Resistor</div>
+        <div class="component" draggable="true">Capacitor</div>
+        <div class="component" draggable="true">Transistor</div>
         <!-- Add more components as needed -->
       </div>
     </div>
@@ -36,6 +36,13 @@
     </div>
     <button id="save">Save Project</button>
     <button id="back-to-menu">Back to Menu</button>
+    
+    <div id="project-list">
+      <h3>My Projects</h3>
+      <ul id="projects-container">
+        <!-- List of projects will be dynamically inserted here -->
+      </ul>
+    </div>
   </main>
   <script src="sandbox.js"></script>
 </body>

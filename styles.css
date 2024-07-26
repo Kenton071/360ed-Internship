@@ -171,3 +171,35 @@ button {
 button:hover {
   background-color: #555;
 }
+/*This is sandboxmode*/
+#project-list {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+#project-list h3 {
+  margin-top: 0;
+}
+
+#projects-container {
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#projects-container li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#projects-container li:hover {
+  background-color: #eee;
+}
+
+#project-list button {
+  margin-top: 10px;
+}
