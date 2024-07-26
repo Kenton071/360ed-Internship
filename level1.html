@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1: Simple Series Circuit</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Level 1: Simple Series Circuit</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="circuit-levels.html">Circuit Levels</a></li>
+        <li><a href="#">Sandbox Mode</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="intro-screen">
+      <h2>Introduction to the Problem</h2>
+      <video id="intro-video" width="600" controls>
+        <source src="your-video-file.mp4" type="video/mp4">
+      </video>
+      <button id="start-button">Start</button>
+    </section>
+    <section id="circuit-workspace" class="hidden">
+      <section>
+        <h2>Instructions</h2>
+        <p>Build a simple series circuit using the components provided.</p>
+      </section>
+      <section id="game-area">
+        <div id="toolbar">
+          <div class="component" draggable="true">Battery</div>
+          <div class="component" draggable="true">Resistor</div>
+          <!-- Add more components as needed -->
+        </div>
+        <div id="workspace">
+          <!-- 2D Surface for placing components -->
+        </div>
+      </section>
+      <section id="properties">
+        <h3>Component Properties</h3>
+        <form id="properties-form">
+          <label for="value">Value:</label>
+          <input type="text" id="value" name="value">
+        </form>
+      </section>
+      <button id="submit">Submit</button>
+    </section>
+  </main>
+</body>
+</html>
+

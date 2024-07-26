@@ -1,0 +1,91 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+header h1 {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#game-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+#toolbar {
+  width: 20%;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+#workspace {
+  width: 75%;
+  height: 400px;
+  border: 1px solid #ccc;
+  background-color: white;
+  position: relative;
+}
+
+.component {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.workspace-component {
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  position: absolute;
+}
+
+#properties {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
