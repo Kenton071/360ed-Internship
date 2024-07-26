@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Congratulations!</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="post-submission.js"></script>
 </head>
 <body>
   <header>
@@ -15,13 +16,23 @@
         <li><a href="circuit-levels.html">Circuit Levels</a></li>
         <li><a href="#">Sandbox Mode</a></li>
         <li><a href="#">About</a></li>
-        
       </ul>
     </nav>
   </header>
   <main>
     <section>
       <p>You have successfully completed the circuit.</p>
+      <div id="score-summary">
+        <h3>Your Score</h3>
+        <p>Time: <span id="time-score"></span></p>
+        <p>Efficiency: <span id="efficiency-score"></span></p>
+        <p>Attempts: <span id="attempts-score"></span></p>
+        <h3>Total Score: <span id="total-score"></span></h3>
+        <h3>Stars Earned: <span id="star-rating"></span></h3>
+      </div>
+      <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
       <button onclick="location.href='level2.html'">Next Level</button>
       <button onclick="location.href='circuit-levels.html'">Back to Menu</button>
     </section>

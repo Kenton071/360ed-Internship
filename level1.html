@@ -16,7 +16,6 @@
         <li><a href="circuit-levels.html">Circuit Levels</a></li>
         <li><a href="#">Sandbox Mode</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -31,7 +30,7 @@
     <section id="circuit-workspace" class="hidden">
       <section>
         <h2>Instructions</h2>
-        <p>Build a simple series circuit using the components provided.</p>
+        <p>Build a simple series circuit using the components provided. Use a 9V Battery and make the series circuit have an overall current of 0.25 Amps</p>
       </section>
       <section id="game-area">
         <div id="toolbar">
@@ -40,12 +39,14 @@
           <!-- Add more components as needed -->
         </div>
         <div id="workspace">
+          <canvas id="connection-canvas"></canvas>
           <!-- 2D Surface for placing components -->
         </div>
       </section>
       <section id="properties">
         <h3>Component Properties</h3>
-        <form id="properties-form">
+        <button id = "ARMode">AR Mode (Components)</button>
+        <form id="properties-form" onsubmit="return false;">
           <label for="value">Value:</label>
           <input type="text" id="value" name="value">
         </form>
@@ -55,4 +56,3 @@
   </main>
 </body>
 </html>
-
