@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandbox Mode</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Sandbox Mode</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="circuit-levels.html">Circuit Levels</a></li>
+        <li><a href="sandbox.html">Sandbox Mode</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="sandbox-workspace">
+      <div id="workspace"></div>
+      <canvas id="connection-canvas"></canvas>
+      <div id="toolbar">
+        <h3>Components</h3>
+        <div class="component">Resistor</div>
+        <div class="component">Capacitor</div>
+        <div class="component">Transistor</div>
+        <!-- Add more components as needed -->
+      </div>
+    </div>
+    <div id="properties">
+      <label for="properties-form">Component Properties:</label>
+      <input type="text" id="properties-form" placeholder="Enter value...">
+    </div>
+    <button id="save">Save Project</button>
+    <button id="back-to-menu">Back to Menu</button>
+  </main>
+  <script src="sandbox.js"></script>
+</body>
+</html>

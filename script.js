@@ -110,5 +110,4 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Please ensure all components have their values set.');
     }
   });
-  
-
+});  
